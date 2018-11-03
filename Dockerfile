@@ -1,4 +1,4 @@
-FROM alpine:3.8
+FROM lsiobase/alpine:3.8
 
 ARG ARIA2WEBUI_VERSION 
 ARG ARIA2_VERSION 
@@ -11,7 +11,6 @@ ENV GID 1000
 
 ENV USER abc
 ENV GROUP abc
-
 
 COPY scripts/entrypoint.sh /
 COPY conf/supervisord.conf /
