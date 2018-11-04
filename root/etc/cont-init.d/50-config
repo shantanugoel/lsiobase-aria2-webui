@@ -1,7 +1,14 @@
 #!/usr/bin/with-contenv bash
 
 printf "${CUSTOM_RPC_TOKEN:-$(openssl rand -base64 32)}" > /var/run/s6/container_environment/RPC_TOKEN
-printf "("${CUSTOM_OVERRIDE_OPTIONS}")" > /var/run/s6/container_environment/OVERRIDE_OPTIONS
+
+OVERRIDE_OPTIONS=("${CUSTOM_OVERRIDE_OPTIONS}")
+
+if [ "${#OVERRIDE_OPTIONS[@]}" -gt 0 ]; then
+  printf "${OVERRIDE_OPTIONS}" > /var/run/s6/container_environment/OVERRIDE_OPTIONS
+else
+  unset OVERRIDE_OPTIONS
+fi
 
 touch /data/config/custom.conf
 
@@ -13,5 +20,5 @@ chown -R abc:abc \
 chown -R abc:abc  \
         /var/lib/nginx
 
-echo "RPC Token: ${RPC_TOKEN}"
+echo "RPC Token: $(cat /var/run/s6/container_environment/RPC_TOKEN)"
 
