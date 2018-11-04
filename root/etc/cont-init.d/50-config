@@ -1,6 +1,16 @@
 #!/usr/bin/with-contenv bash
 
+if [ -z "${CUSTOM_RPC_TOKEN}" ]; then
+  exit 1
+fi
+ 
 export RPC_TOKEN="${CUSTOM_RPC_TOKEN:-$(openssl rand -base64 32)}"
+
+if [ -z "${CUSTOM_RPC_TOKEN}" ]; then
+  exit 1
+fi
+
+
 export OVERRIDE_OPTIONS=("${CUSTOM_OVERRIDE_OPTIONS}")
 
 touch /data/config/custom.conf
@@ -14,3 +24,4 @@ chown -R abc:abc  \
         /var/lib/nginx
 
 echo "RPC Token: ${RPC_TOKEN}"
+
