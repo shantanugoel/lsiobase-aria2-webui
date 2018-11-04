@@ -21,6 +21,6 @@ RUN \
 
 COPY root/ /
 
-EXPOSE 8080 6800
+EXPOSE 80 443
 
 VOLUME ["/data/config/","/data/downloads/"]
