@@ -11,8 +11,6 @@ ARG ARIA2_VERSION
 ENV ARIA2WEBUI_VERSION 77636e25af04a965435519903ae09819ab727586
 ENV ARIA2_VERSION 1.34.0-r0
 
-ENV S6_KEEP_ENV 1
-
 RUN \
     apk add --no-cache tar curl openssl aria2=${ARIA2_VERSION} && \
     mkdir -p /data/aria2c-webui /data/config && \
