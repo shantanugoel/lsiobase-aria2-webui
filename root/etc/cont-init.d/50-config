@@ -13,4 +13,4 @@ chown -R abc:abc \
 chown -R abc:abc  \
         /var/lib/nginx
 
-echo ${RPC_TOKEN
+echo "RPC Token: ${RPC_TOKEN}"
