@@ -1,0 +1,16 @@
+#!/usr/bin/with-contenv bash
+
+export RPC_TOKEN="${CUSTOM_RPC_TOKEN:-$(openssl rand -base64 32)}"
+export OVERRIDE_OPTIONS=("${CUSTOM_OVERRIDE_OPTIONS}")
+
+touch /data/config/custom.conf
+
+chown -R abc:abc \
+         /data/aria2c-webui \
+         /data/config \
+         /data/downloads
+
+chown -R abc:abc  \
+        /var/lib/nginx
+
+echo ${RPC_TOKEN
