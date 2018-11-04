@@ -1,9 +1,5 @@
 #!/usr/bin/with-contenv bash
 
-if [ -z "${CUSTOM_RPC_TOKEN}" ]; then
-  exit 1
-fi
-
 printf "${CUSTOM_RPC_TOKEN:-$(openssl rand -base64 32)}" > /var/run/s6/container_environment/RPC_TOKEN
 printf "("${CUSTOM_OVERRIDE_OPTIONS}")" > /var/run/s6/container_environment/OVERRIDE_OPTIONS
 
