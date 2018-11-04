@@ -21,4 +21,4 @@ COPY root/ /
 
 EXPOSE 80 443
 
-VOLUME ["/data/config/","/data/downloads/"]
+VOLUME ["/data/downloads/"]
