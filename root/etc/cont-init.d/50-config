@@ -3,15 +3,9 @@
 if [ -z "${CUSTOM_RPC_TOKEN}" ]; then
   exit 1
 fi
- 
-export RPC_TOKEN="${CUSTOM_RPC_TOKEN:-$(openssl rand -base64 32)}"
 
-if [ -z "${CUSTOM_RPC_TOKEN}" ]; then
-  exit 1
-fi
-
-
-export OVERRIDE_OPTIONS=("${CUSTOM_OVERRIDE_OPTIONS}")
+printf "${CUSTOM_RPC_TOKEN:-$(openssl rand -base64 32)}" > /var/run/s6/container_environment/RPC_TOKEN
+printf "("${CUSTOM_OVERRIDE_OPTIONS}")" > /var/run/s6/container_environment/OVERRIDE_OPTIONS
 
 touch /data/config/custom.conf
 
