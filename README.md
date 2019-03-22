@@ -8,3 +8,6 @@ docker run -d --name=aria2 --restart=always -v </foo/bar/path>:/data/downloads -
 # Optional variables
 - CUSTOM_RPC_TOKEN
 - CUSTOM_OVERRIDE_OPTIONS
+
+# TODO
+- Offpeak time: https://github.com/ziahamza/webui-aria2/issues/126
