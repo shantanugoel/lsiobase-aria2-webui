@@ -81,7 +81,7 @@ services:
       - UMASK_SET=022
     volumes:
       - </path/to/appdata/config>:/config
-      - </path/to/downloads>:/downloads
+      - </path/to/downloads>:/data/downloads
     ports:
       - 443:443
     restart: unless-stopped
@@ -99,8 +99,10 @@ Container images are configured using parameters passed at runtime (such as thos
 | `-e TZ=Europe/London` | Specify a timezone to use EG Europe/London |
 | `-e UMASK_SET=022` | for umask setting of couchpotato, optional , default if left unset is 022 |
 | `-v /config` | Couchpotato Application Data. |
-| `-v /downloads` | Downloads Folder. |
-| `-v /movies` | Movie Share. |
+| `-v /data/downloads` | Downloads Folder. |
+| `-e CUSTOM_RPC_TOKEN` | Optional. Specify custom RPC token vaule. |
+| `-e CUSTOM_OVERRIDE_OPTIONS` | Optional. Pass arguments to aria2 daemon |
+
 
 ## User / Group Identifiers
 
@@ -156,24 +158,6 @@ Below are the instructions for updating containers:
 ## Versions
 
 * **23.02.19:** - Initial version.
-
-
-
-
-
-
-
-
-# docker-aria2-webui
-
-# Info
-```
-docker run -d --name=aria2 --restart=always -v </foo/bar/path>:/data/downloads -e PUID=<UID> -e PGID=<GID>  -p 443:443 aria:latest
-```
-
-# Optional variables
-- CUSTOM_RPC_TOKEN
-- CUSTOM_OVERRIDE_OPTIONS
 
 # TODO
 - Offpeak time: https://github.com/ziahamza/webui-aria2/issues/126
