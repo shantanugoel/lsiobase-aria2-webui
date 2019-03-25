@@ -16,12 +16,12 @@ Find us at:
 
 # [linuxserver/aria2](https://github.com/linuxserver/docker-aria2)
 [![](https://img.shields.io/discord/354974912613449730.svg?logo=discord&label=LSIO%20Discord&style=flat-square)](https://discord.gg/YWrKVTn)
-[![](https://images.microbadger.com/badges/version/linuxserver/couchpotato.svg)](https://microbadger.com/images/linuxserver/couchpotato "Get your own version badge on microbadger.com")
-[![](https://images.microbadger.com/badges/image/linuxserver/couchpotato.svg)](https://microbadger.com/images/linuxserver/couchpotato "Get your own version badge on microbadger.com")
-![Docker Pulls](https://img.shields.io/docker/pulls/linuxserver/couchpotato.svg)
-![Docker Stars](https://img.shields.io/docker/stars/linuxserver/couchpotato.svg)
-[![Build Status](https://ci.linuxserver.io/buildStatus/icon?job=Docker-Pipeline-Builders/docker-couchpotato/master)](https://ci.linuxserver.io/job/Docker-Pipeline-Builders/job/docker-couchpotato/job/master/)
-[![](https://lsio-ci.ams3.digitaloceanspaces.com/linuxserver/couchpotato/latest/badge.svg)](https://lsio-ci.ams3.digitaloceanspaces.com/linuxserver/couchpotato/latest/index.html)
+[![](https://images.microbadger.com/badges/version/linuxserver/aria2.svg)](https://microbadger.com/images/linuxserver/aria2 "Get your own version badge on microbadger.com")
+[![](https://images.microbadger.com/badges/image/linuxserver/aria2.svg)](https://microbadger.com/images/linuxserver/aria2 "Get your own version badge on microbadger.com")
+![Docker Pulls](https://img.shields.io/docker/pulls/linuxserver/aria2.svg)
+![Docker Stars](https://img.shields.io/docker/stars/linuxserver/aria2.svg)
+[![Build Status](https://ci.linuxserver.io/buildStatus/icon?job=Docker-Pipeline-Builders/docker-aria2/master)](https://ci.linuxserver.io/job/Docker-Pipeline-Builders/job/docker-aria2/job/master/)
+[![](https://lsio-ci.ams3.digitaloceanspaces.com/linuxserver/aria2/latest/badge.svg)](https://lsio-ci.ams3.digitaloceanspaces.com/linuxserver/aria2/latest/index.html)
 
 [Aria2](https://aria2.github.io/)  is a lightweight multi-protocol & multi-source command-line download utility. It supports HTTP/HTTPS, FTP, SFTP, BitTorrent and Metalink. aria2 can be manipulated via built-in JSON-RPC and XML-RPC interfaces.
 
@@ -71,7 +71,7 @@ Compatible with docker-compose v2 schemas.
 ---
 version: "2"
 services:
-  couchpotato:
+  aria2:
     image: linuxserver/aria2
     container_name: aria2
     environment:
@@ -97,8 +97,8 @@ Container images are configured using parameters passed at runtime (such as thos
 | `-e PUID=1000` | for UserID - see below for explanation |
 | `-e PGID=1000` | for GroupID - see below for explanation |
 | `-e TZ=Europe/London` | Specify a timezone to use EG Europe/London |
-| `-e UMASK_SET=022` | for umask setting of couchpotato, optional , default if left unset is 022 |
-| `-v /config` | Couchpotato Application Data. |
+| `-e UMASK_SET=022` | for umask setting of aria2, optional , default if left unset is 022 |
+| `-v /config` | aria2 Application Data. |
 | `-v /data/downloads` | Downloads Folder. |
 | `-e CUSTOM_RPC_TOKEN` | Optional. Specify custom RPC token vaule. |
 | `-e CUSTOM_OVERRIDE_OPTIONS` | Optional. Pass arguments to aria2 daemon |
