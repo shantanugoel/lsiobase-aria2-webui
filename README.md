@@ -56,7 +56,7 @@ docker create \
   -e TZ=Europe/London \
   -p 4040:4040 \
   -v </path/to/appdata/config>:/data/config \
-  -v </path/to/downloads>:/downloads \
+  -v </path/to/downloads>:/data/downloads \
   --restart unless-stopped \
   linuxserver/aria2
 ```
