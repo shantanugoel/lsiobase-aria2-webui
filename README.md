@@ -77,7 +77,6 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=Europe/London
-      - UMASK_SET=022
     volumes:
       - </path/to/appdata/config>:/data/config
       - </path/to/downloads>:/data/downloads
