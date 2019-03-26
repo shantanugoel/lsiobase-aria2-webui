@@ -54,9 +54,8 @@ docker create \
   -e PUID=1000 \
   -e PGID=1000 \
   -e TZ=Europe/London \
-  -e UMASK_SET=022 \
-  -p 443:443 \
-  -v </path/to/appdata/config>:/config \
+  -p 4040:4040 \
+  -v </path/to/appdata/config>:/data/config \
   -v </path/to/downloads>:/downloads \
   --restart unless-stopped \
   linuxserver/aria2
@@ -80,10 +79,10 @@ services:
       - TZ=Europe/London
       - UMASK_SET=022
     volumes:
-      - </path/to/appdata/config>:/config
+      - </path/to/appdata/config>:/data/config
       - </path/to/downloads>:/data/downloads
     ports:
-      - 443:443
+      - 4040:4040
     restart: unless-stopped
 ```
 
@@ -93,16 +92,15 @@ Container images are configured using parameters passed at runtime (such as thos
 
 | Parameter | Function |
 | :----: | --- |
-| `-p 5050` | http gui |
+| `-p 4040` | http gui |
 | `-e PUID=1000` | for UserID - see below for explanation |
 | `-e PGID=1000` | for GroupID - see below for explanation |
 | `-e TZ=Europe/London` | Specify a timezone to use EG Europe/London |
-| `-e UMASK_SET=022` | for umask setting of aria2, optional , default if left unset is 022 |
-| `-v /config` | aria2 Application Data. |
+| `-v /data/config` | aria2 Application Data. |
 | `-v /data/downloads` | Downloads Folder. |
 | `-e CUSTOM_RPC_TOKEN` | Optional. Specify custom RPC token vaule. |
 | `-e CUSTOM_OVERRIDE_OPTIONS` | Optional. Pass arguments to aria2 daemon |
-
+| `-e SKIP_SSL=true` | Optional. Disable HTTPS |
 
 ## User / Group Identifiers
 
