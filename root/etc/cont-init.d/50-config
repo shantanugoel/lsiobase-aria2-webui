@@ -4,6 +4,8 @@ printf "${CUSTOM_RPC_TOKEN:-$(openssl rand -base64 32)}" > /var/run/s6/container
 
 OVERRIDE_OPTIONS=("${CUSTOM_OVERRIDE_OPTIONS}")
 
+export WEBUI=${WEBUI:-ariang}
+
 if [ "${#OVERRIDE_OPTIONS[@]}" -gt 0 ]; then
   printf "${OVERRIDE_OPTIONS}" > /var/run/s6/container_environment/OVERRIDE_OPTIONS
 else
@@ -12,8 +14,16 @@ fi
 
 touch /data/config/custom.conf
 
+
+if [ "${WEBUI}" == "aria" ]; then
+  ln -s /data/aria2-webui-1 /data/webui
+elif [ "${WEBUI}" == "ariang" ]; then
+  ln -s /data/aria2-webui-2 /data/webui
+fi
+
 chown -R abc:abc \
-         /data/aria2c-webui \
+         /data/aria2-webui-1 \
+         /data/aria2-webui-2 \
          /data/config \
          /data/downloads
 
@@ -21,4 +31,3 @@ chown -R abc:abc  \
         /var/lib/nginx
 
 echo "RPC Token: $(cat /var/run/s6/container_environment/RPC_TOKEN)"
-
