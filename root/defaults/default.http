@@ -3,7 +3,7 @@ server {
   server_name _;
 
   location / {
-    root /data/aria2c-webui;
+    root /data/webui;
   }
 
   location /jsonrpc {
