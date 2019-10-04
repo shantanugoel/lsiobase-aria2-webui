@@ -26,7 +26,8 @@ Find us at:
 [Aria2](https://aria2.github.io/)  is a lightweight multi-protocol & multi-source command-line download utility. It supports HTTP/HTTPS, FTP, SFTP, BitTorrent and Metalink. aria2 can be manipulated via built-in JSON-RPC and XML-RPC interfaces.
 
 ## Batteries included:
-- [WebUI] https://github.com/ziahamza/webui-aria2
+- [WebUI] (-e WEBUI=aria) https://github.com/ziahamza/webui-aria2
+- [WebUI] (-e WEBUI=ariang) https://github.com/mayswind/AriaNg/
 
 ## Supported Architectures
 
@@ -57,6 +58,7 @@ docker create \
   -p 4040:4040 \
   -v </path/to/appdata/config>:/data/config \
   -v </path/to/downloads>:/data/downloads \
+  -e WEBUI=aria \
   --restart unless-stopped \
   linuxserver/aria2
 ```
@@ -76,6 +78,7 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
+      - WEBUI=aria
       - TZ=Europe/London
     volumes:
       - </path/to/appdata/config>:/data/config
@@ -100,6 +103,8 @@ Container images are configured using parameters passed at runtime (such as thos
 | `-e CUSTOM_RPC_TOKEN` | Optional. Specify custom RPC token vaule. |
 | `-e CUSTOM_OVERRIDE_OPTIONS` | Optional. Pass arguments to aria2 daemon |
 | `-e SKIP_SSL=true` | Optional. Disable HTTPS |
+| `-e WEBUI=aria` | Optional. Defaults to ariang |
+
 
 ## User / Group Identifiers
 
