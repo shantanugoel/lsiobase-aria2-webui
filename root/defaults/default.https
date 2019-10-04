@@ -6,7 +6,7 @@ server {
   ssl_certificate_key /config/keys/cert.key;
 
   location / {
-    root /data/aria2c-webui;
+    root /data/webui;
   }
 
   location /jsonrpc {
