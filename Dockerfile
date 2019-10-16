@@ -1,4 +1,4 @@
-FROM lsiobase/alpine.nginx:3.10
+FROM lsiobase/alpine.nginx:3.9
 
 ARG BUILD_DATE
 ARG VERSION
