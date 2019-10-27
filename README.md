@@ -39,7 +39,7 @@ docker create \
   -v </path/to/downloads>:/data/downloads \
   -e WEBUI=aria \
   --restart unless-stopped \
-  linuxserver/aria2
+  lukasmrtvy/lsiobase-aria2-webui
 ```
 
 
@@ -52,7 +52,7 @@ Compatible with docker-compose v2 schemas.
 version: "2"
 services:
   aria2:
-    image: linuxserver/aria2
+    image: lukasmrtvy/lsiobase-aria2-webui
     container_name: aria2
     environment:
       - PUID=1000
@@ -122,7 +122,7 @@ Most of our images are static, versioned, and require an image update and contai
 Below are the instructions for updating containers:  
   
 ### Via Docker Run/Create
-* Update the image: `docker pull linuxserver/aria2`
+* Update the image: `docker pull lukasmrtvy/lsiobase-aria2-webui`
 * Stop the running container: `docker stop aria2`
 * Delete the container: `docker rm aria2`
 * Recreate a new container with the same docker create parameters as instructed above (if mapped correctly to a host folder, your `/config` folder and settings will be preserved)
