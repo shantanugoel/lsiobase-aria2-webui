@@ -12,7 +12,7 @@ Unofficial Linuxserver.io image, use issue tracker for potentional problems.
 
 Our images support multiple architectures such as `x86-64`, `arm64` and `armhf`. We utilise the docker manifest for multi-platform awareness. More information is available from docker [here](https://github.com/docker/distribution/blob/master/docs/spec/manifest-v2-2.md#manifest-list) and our announcement [here](https://blog.linuxserver.io/2019/02/21/the-lsio-pipeline-project/). 
 
-Simply pulling `linuxserver/aria2` should retrieve the correct image for your arch, but you can also pull specific arch images via tags.
+Simply pulling `lukasmrtvy/lsiobase-aria2-webui` should retrieve the correct image for your arch, but you can also pull specific arch images via tags.
 
 The architectures supported by this image are:
 
