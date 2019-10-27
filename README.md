@@ -1,27 +1,6 @@
-[![linuxserver.io](https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/linuxserver_medium.png)](https://linuxserver.io)
+## Info
 
-The [LinuxServer.io](https://linuxserver.io) team brings you another container release featuring :-
-
- * regular and timely application updates
- * easy user mappings (PGID, PUID)
- * custom base image with s6 overlay
- * weekly base OS updates with common layers across the entire LinuxServer.io ecosystem to minimise space usage, down time and bandwidth
- * regular security updates
-
-Find us at:
-* [Discord](https://discord.gg/YWrKVTn) - realtime support / chat with the community and the team.
-* [IRC](https://irc.linuxserver.io) - on freenode at `#linuxserver.io`. Our primary support channel is Discord.
-* [Blog](https://blog.linuxserver.io) - all the things you can do with our containers including How-To guides, opinions and much more!
-* [Podcast](https://anchor.fm/linuxserverio) - on hiatus. Coming back soon (late 2018).
-
-# [linuxserver/aria2](https://github.com/linuxserver/docker-aria2)
-[![](https://img.shields.io/discord/354974912613449730.svg?logo=discord&label=LSIO%20Discord&style=flat-square)](https://discord.gg/YWrKVTn)
-[![](https://images.microbadger.com/badges/version/linuxserver/aria2.svg)](https://microbadger.com/images/linuxserver/aria2 "Get your own version badge on microbadger.com")
-[![](https://images.microbadger.com/badges/image/linuxserver/aria2.svg)](https://microbadger.com/images/linuxserver/aria2 "Get your own version badge on microbadger.com")
-![Docker Pulls](https://img.shields.io/docker/pulls/linuxserver/aria2.svg)
-![Docker Stars](https://img.shields.io/docker/stars/linuxserver/aria2.svg)
-[![Build Status](https://ci.linuxserver.io/buildStatus/icon?job=Docker-Pipeline-Builders/docker-aria2/master)](https://ci.linuxserver.io/job/Docker-Pipeline-Builders/job/docker-aria2/job/master/)
-[![](https://lsio-ci.ams3.digitaloceanspaces.com/linuxserver/aria2/latest/badge.svg)](https://lsio-ci.ams3.digitaloceanspaces.com/linuxserver/aria2/latest/index.html)
+Unofficial Linuxserver.io image, use issue tracker for potentional problems.
 
 [Aria2](https://aria2.github.io/)  is a lightweight multi-protocol & multi-source command-line download utility. It supports HTTP/HTTPS, FTP, SFTP, BitTorrent and Metalink. aria2 can be manipulated via built-in JSON-RPC and XML-RPC interfaces.
 
