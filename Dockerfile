@@ -1,4 +1,4 @@
-FROM lsiobase/nginx
+FROM lsiobase/nginx:3.12
 
 ARG BUILD_DATE
 ARG VERSION
