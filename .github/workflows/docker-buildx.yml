@@ -1,0 +1,41 @@
+name: docker-buildx
+
+on:
+  push:
+    branches:
+    - master
+  watch:
+    types: [started]
+  schedule:
+    - cron: "0 21 * * 5"
+
+env:
+  DOCKERHUB_USER: shantanugoel
+  DOCKERHUB_REPO: docker-aria2
+
+jobs:
+  docker-buildx:
+    runs-on: ubuntu-latest
+    if: (github.event_name != 'watch') || (github.actor == github.event.repository.owner.login)
+    steps:
+      - 
+        name: Load Variables
+        id: vars
+        run: |
+          echo "::set-output name=version::$(date +'%Y-%m-%d')"
+          echo "::set-output name=ariang_version::$(curl -s https://api.github.com/repos/mayswind/AriaNg/releases/latest  | jq -r '.tag_name')"
+      -
+        name: Checkout
+        uses: actions/checkout@v2
+      - 
+        name: Run Buildx
+        uses: ilteoood/docker_buildx@master
+        with:
+          imageName: ${{ env.DOCKERHUB_USER }}/${{ env.DOCKERHUB_REPO }}
+          tag: latest,${{ steps.vars.outputs.version }}
+          dockerFile: Dockerfile
+          buildArg: VERSION=${{ steps.vars.outputs.version }},ARIA2WEBUI_2_VERSION=${{ steps.vars.outputs.ariang_version }}
+          publish: true
+          platform: linux/arm64
+          dockerHubUser: ${{ env.DOCKERHUB_USER }}
+          dockerHubPassword: ${{ secrets.DOCKERHUB_PASS }}
