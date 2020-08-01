@@ -1,6 +1,7 @@
 #!/usr/bin/with-contenv bash
 
-printf "${CUSTOM_RPC_TOKEN:-$(openssl rand -base64 32)}" > /var/run/s6/container_environment/RPC_TOKEN
+#printf "${CUSTOM_RPC_TOKEN:-$(openssl rand -base64 32)}" > /var/run/s6/container_environment/RPC_TOKEN
+printf "${CUSTOM_RPC_TOKEN}" > /var/run/s6/container_environment/RPC_TOKEN
 
 OVERRIDE_OPTIONS=("${CUSTOM_OVERRIDE_OPTIONS}")
 
